@@ -14,6 +14,8 @@ class Job extends Model
     {
         return $this->belongsTo(Employer::class);
     }
+    // I forgot what this tag function for or where it mentioned in other file and im scared to delete it 💀
+    // Oh yea, i use it when using terminal, still idk i need to delete it 
     public function tag(string $name): void
     {
         $tag = Tag::firstOrCreate([
