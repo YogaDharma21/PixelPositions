@@ -1,5 +1,15 @@
+@php
+    $url = request()->url();
+    $path = parse_url($url, PHP_URL_PATH);    
+    $segments = explode('/', $path);
+    $tag = end($segments);    
+    $tagName = urldecode($tag);
+@endphp
+
+
 <x-layout>
-    <x-page-heading>Search For {{ request('q') }}</x-page-heading>
+<x-page-heading>Search For {{ $tagName }}</x-page-heading>
+    
     <x-forms.form action="/search" class="mt-6">
         <x-forms.input :label="false" name="q" placeholder="Search Again?..."/>
     </x-forms.form>
