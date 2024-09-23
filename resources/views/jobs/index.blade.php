@@ -17,7 +17,7 @@
         <section>
             <x-section-heading>Tags</x-section-heading>
             <div class="mt-6 space-x-1">
-                @foreach ($tags as $tag)
+                @foreach ($tags->take(20) as $tag)
                     <x-tag :$tag />
                 @endforeach
 
